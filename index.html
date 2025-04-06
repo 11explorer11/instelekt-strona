@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="InstElekt – Nowoczesne instalacje elektryczne i systemy Smart Home w Legionowie i okolicach." />
+  <title>InstElekt – Elektryk & Smart Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="./logo1.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js" defer></script>
+  <script src="https://unpkg.com/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
+  <link href="https://unpkg.com/@splidejs/splide@4.1.3/dist/css/splide.min.css" rel="stylesheet">
+  <style>
+    .parallax { background-attachment: fixed; }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans" x-data="{ visible: false }" x-init="() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+}">
+  <!-- Navbar -->
+  <nav class="w-full fixed top-0 left-0 z-50 bg-black bg-opacity-80 backdrop-blur border-b border-gray-700">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img src="./logo1.png" alt="InstElekt logo" class="h-10" />
+        <span class="text-xl font-semibold">InstElekt</span>
+      </div>
+      <div class="space-x-4">
+        <a href="#kalkulator" class="text-white hover:text-blue-400">Kalkulator</a>
+        <a href="#kontakt" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition">Umów wycenê</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative w-full h-screen bg-cover bg-center flex items-center justify-center text-center text-white" style="background-image: url('./tlo-o-mnie.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+    <div class="relative z-10 max-w-2xl px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Nowoczesne instalacje elektryczne i inteligentne domy</h1>
+      <p class="text-lg md:text-xl mb-8">Profesjonalne us³ugi elektryczne oraz rozwi¹zania smart home dostosowane do Twoich potrzeb.</p>
+      <a href="#kontakt" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl transition">Umów wycenê</a>
+    </div>
+  </section>
+
+  <div class="pt-24"></div>
+
+  <!-- O mnie -->
+  <section class="relative py-20 px-4 max-w-5xl mx-auto bg-cover bg-center text-white" id="o-mnie" style="background-image: url('./tlo-o-mnie.png');">
+    <div class="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
+    <div class="relative z-10">
+      <h2 class="text-3xl font-bold mb-6 border-b border-blue-500 inline-block">INSTELEKT – PROFESJONALNIE, BEZPIECZNIE, NOWOCZEŒNIE</h2>
+      <p class="text-lg leading-relaxed">
+        Witamy w Instelekt – Twoim zaufanym partnerem w dziedzinie us³ug elektrycznych oraz nowoczesnych rozwi¹zañ technologicznych dla domu i biznesu...
+      </p>
+    </div>
+  </section>
+
+  <!-- Us³ugi -->
+  <section class="bg-gray-900 py-20 px-4 fade-in" id="uslugi">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10 border-b border-blue-500 inline-block">Us³ugi</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg">
+        <div class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">? Instalacje elektryczne</h3>
+          <p>Nowoczesne i bezpieczne instalacje dla domów, firm i lokali us³ugowych.</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">?? Smart Home</h3>
+          <p>Automatyka domowa, sterowanie œwiat³em, ogrzewaniem, roletami.</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">?? Monitoring i alarmy</h3>
+          <p>Systemy CCTV, alarmy, czujniki ruchu, powiadomienia.</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">??? Pomiary i serwis</h3>
+          <p>Pomiary elektryczne, przegl¹dy, konserwacje i naprawy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kalkulator -->
+  <section class="py-20 px-4 max-w-5xl mx-auto fade-in" id="kalkulator">
+    <h2 class="text-3xl font-bold mb-10 border-b border-blue-500 inline-block">Kalkulator instalacji</h2>
+    <form id="calcForm" class="space-y-6 text-lg">
+      <div>
+        <label class="block mb-2">Rodzaj obiektu:</label>
+        <select class="w-full p-3 rounded bg-black border border-gray-700" id="obiekt">
+          <option value="1.0">Mieszkanie</option>
+          <option value="1.2">Dom</option>
+          <option value="1.5">Biuro / Lokal us³ugowy</option>
+        </select>
+      </div>
+      <div>
+        <label class="block mb-2">Metra¿ obiektu (m2):</label>
+        <input type="number" class="w-full p-3 rounded bg-black border border-gray-700" id="metraz" min="20" max="500" value="100">
+      </div>
+      <div>
+        <label class="block mb-2">Dodatkowe opcje:</label>
+        <label class="inline-flex items-center">
+          <input type="checkbox" id="smart" class="form-checkbox text-blue-500 mr-2">
+          <span>System Smart Home</span>
+        </label>
+      </div>
+      <button type="button" onclick="obliczKoszt()" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition">Oblicz koszt</button>
+      <div id="wynik" class="text-xl font-bold text-green-400"></div>
+    </form>
+    <script>
+      function obliczKoszt() {
+        const metraz = parseFloat(document.getElementById('metraz').value);
+        const wspolczynnik = parseFloat(document.getElementById('obiekt').value);
+        const smart = document.getElementById('smart').checked ? 1.25 : 1.0;
+        const bazowaCenaZaM2 = 100; // Mazowieckie, 2025 œrednia stawka bazowa
+
+        const koszt = Math.round(metraz * wspolczynnik * smart * bazowaCenaZaM2);
+        document.getElementById('wynik').innerText = `Szacowany koszt: ${koszt.toLocaleString('pl-PL')} z³`;
+      }
+    </script>
+  </section>
+
+  <!-- Opinie -->
+  <section class="py-20 px-4 max-w-5xl mx-auto" id="opinie">
+    <h2 class="text-3xl font-bold mb-10 border-b border-blue-500 inline-block">Opinie klientów</h2>
+    <div id="opinieSlider" class="splide" aria-label="Opinie klientów">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"Profesjonalnie, szybko i zgodnie z ustaleniami. Polecam ka¿demu!" – Anna K.</blockquote></li>
+          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"System Smart Home dzia³a bez zarzutu – dom sterowany z telefonu to œwietna sprawa." – Marcin D.</blockquote></li>
+          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"Pe³en profesjonalizm i doradztwo na najwy¿szym poziomie. Zdecydowanie polecam!" – Ewa Z.</blockquote></li>
+          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"Zamontowane instalacje dzia³aj¹ bezb³êdnie – œwietna robota!" – Tomasz M.</blockquote></li>
+          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"Bardzo szybki czas realizacji i konkurencyjna cena. Bêdê wracaæ." – Katarzyna L.</blockquote></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#opinieSlider', {
+          type   : 'loop',
+          autoplay: true,
+          interval: 5000,
+          pauseOnHover: true,
+          pagination: false,
+          arrows: false,
+        }).mount();
+      });
+    </script>
+  </section>
+
+  <!-- Kontakt -->
+  <section class="bg-gray-900 py-20 px-4 fade-in" id="kontakt">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 border-b border-blue-500 inline-block">Kontakt</h2>
+      <div class="grid md:grid-cols-2 gap-8 text-lg">
+        <div>
+          <p><strong>Adres:</strong> Handlowa 23, 05-120 Legionowo</p>
+          <p><strong>Telefon:</strong> <a href="tel:518354107" class="text-blue-400">518 354 107</a></p>
+          <p><strong>Email:</strong> <a href="mailto:kontaktfirma@instelekt.pl" class="text-blue-400">kontaktfirma@instelekt.pl</a></p>
+        </div>
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
+          <input type="text" name="Imiê" placeholder="Twoje imiê" required class="w-full p-3 rounded bg-black border border-gray-700" />
+          <input type="email" name="Email" placeholder="Twój email" required class="w-full p-3 rounded bg-black border border-gray-700" />
+          <textarea name="Wiadomoœæ" placeholder="Twoja wiadomoœæ" rows="4" required class="w-full p-3 rounded bg-black border border-gray-700"></textarea>
+          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition">Wyœlij</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stopka -->
+  <footer class="text-center py-6 text-gray-500 text-sm">
+    &copy; 2025 InstElekt. Wszelkie prawa zastrze¿one.
+  </footer>
+</body>
+</html> 
