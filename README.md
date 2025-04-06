@@ -1,1 +1,0 @@
-# instelekt-strona
