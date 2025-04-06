@@ -7,8 +7,8 @@
   <title>InstElekt – Elektryk & Smart Home</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Ikony Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-somehashvalue" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-lQDjLeOR9zsnvmR4+74k+Ax5IipS4RmyozF3L2xRE+P4KJwx0P1r/GX2wl+DWBYI3p3hbYPnTJvRO0RfXz27Bw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="./logo1.png" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js" defer></script>
   <script src="https://unpkg.com/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
@@ -73,39 +73,76 @@
     </div>
   </section>
 
-  <!-- Usługi -->
+  <!-- Usługi z rozwijalnymi opisami -->
   <section class="bg-gray-900 py-20 px-4 fade-in" id="uslugi">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold mb-10 border-b border-blue-500 inline-block">Usługi</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg">
+        
         <!-- Instalacje elektryczne -->
-        <div class="bg-gray-800 rounded-xl p-6 shadow-md">
-          <h3 class="text-xl font-semibold text-blue-400 mb-2">
-            <i class="fa-solid fa-bolt"></i> Instalacje elektryczne
+        <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+            <span><i class="fa-solid fa-bolt"></i> Instalacje elektryczne</span>
+            <i x-show="!open" class="fa-solid fa-chevron-down"></i>
+            <i x-show="open" class="fa-solid fa-chevron-up"></i>
           </h3>
           <p>Nowoczesne i bezpieczne instalacje dla domów, firm i lokali usługowych.</p>
+          <div x-show="open" x-transition class="mt-4 text-gray-300">
+            <p>
+              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
+              Opis instalacji elektrycznych: [Wstaw pełny opis tutaj].
+            </p>
+          </div>
         </div>
+        
         <!-- Smart Home -->
-        <div class="bg-gray-800 rounded-xl p-6 shadow-md">
-          <h3 class="text-xl font-semibold text-blue-400 mb-2">
-            <i class="fa-solid fa-house-chimney"></i> Smart Home
+        <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+            <span><i class="fa-solid fa-house-chimney"></i> Smart Home</span>
+            <i x-show="!open" class="fa-solid fa-chevron-down"></i>
+            <i x-show="open" class="fa-solid fa-chevron-up"></i>
           </h3>
           <p>Automatyka domowa, sterowanie światłem, ogrzewaniem, roletami.</p>
+          <div x-show="open" x-transition class="mt-4 text-gray-300">
+            <p>
+              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
+              Opis Smart Home: [Wstaw pełny opis tutaj].
+            </p>
+          </div>
         </div>
+        
         <!-- Monitoring i alarmy -->
-        <div class="bg-gray-800 rounded-xl p-6 shadow-md">
-          <h3 class="text-xl font-semibold text-blue-400 mb-2">
-            <i class="fa-solid fa-camera"></i> Monitoring i alarmy
+        <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+            <span><i class="fa-solid fa-camera"></i> Monitoring i alarmy</span>
+            <i x-show="!open" class="fa-solid fa-chevron-down"></i>
+            <i x-show="open" class="fa-solid fa-chevron-up"></i>
           </h3>
           <p>Systemy CCTV, alarmy, czujniki ruchu, powiadomienia.</p>
+          <div x-show="open" x-transition class="mt-4 text-gray-300">
+            <p>
+              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
+              Opis monitoringu i alarmów: [Wstaw pełny opis tutaj].
+            </p>
+          </div>
         </div>
+        
         <!-- Pomiary i serwis -->
-        <div class="bg-gray-800 rounded-xl p-6 shadow-md">
-          <h3 class="text-xl font-semibold text-blue-400 mb-2">
-            <i class="fa-solid fa-wrench"></i> Pomiary i serwis
+        <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+            <span><i class="fa-solid fa-wrench"></i> Pomiary i serwis</span>
+            <i x-show="!open" class="fa-solid fa-chevron-down"></i>
+            <i x-show="open" class="fa-solid fa-chevron-up"></i>
           </h3>
           <p>Pomiary elektryczne, przeglądy, konserwacje i naprawy.</p>
+          <div x-show="open" x-transition class="mt-4 text-gray-300">
+            <p>
+              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
+              Opis pomiarów i serwisu: [Wstaw pełny opis tutaj].
+            </p>
+          </div>
         </div>
+        
       </div>
     </div>
   </section>
@@ -166,7 +203,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         new Splide('#opinieSlider', {
-          type   : 'loop',
+          type: 'loop',
           autoplay: true,
           interval: 5000,
           pauseOnHover: true,
