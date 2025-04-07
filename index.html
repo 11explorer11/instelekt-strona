@@ -9,8 +9,8 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome z oficjalnego CDN -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" integrity="sha384-oS8C38HgvFYlSRnLTXaLb1dWWKrQdfuwFGqzYMLcSpEOK9ZmD2UDez0YFi+27U8N" crossorigin="anonymous">
+  <!-- Font Awesome (cdnjs, sprawdzony) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-VjNGR1TtV5hnZC1uYjFR5W4q2hB0fV6gPdpBdR9cAw5SPFi2+z9CNkGZLCpo2T2+Yt3Txd4N9W5W+Fs46H+MXA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Ikona strony -->
   <link rel="icon" href="./logo1.png" />
@@ -105,7 +105,7 @@
     </div>
   </section>
 
- <!-- Usługi z rozwijalnymi opisami -->
+  <!-- Usługi z rozwijalnymi opisami -->
   <section class="bg-gray-900 py-20 px-4 fade-in" id="uslugi">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold mb-10 border-b border-blue-500 inline-block">Usługi</h2>
@@ -114,45 +114,30 @@
         <!-- Instalacje elektryczne -->
         <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
           <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
-            <span><i class="fa-solid fa-bolt"></i> Instalacje Elektryczne - Profesjonalizm i Niezawodność
-</span>
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-bolt text-2xl transition-transform duration-300 hover:scale-125"></i>
+              Instalacje Elektryczne - Profesjonalizm i Niezawodność
+            </span>
             <i x-show="!open" class="fa-solid fa-chevron-down"></i>
             <i x-show="open" class="fa-solid fa-chevron-up"></i>
           </h3>
-          <p>Firma Instełekt to synonim jakości w dziedzinie instalacji elektrycznych. </p>
+          <p>Firma Instełekt to synonim jakości w dziedzinie instalacji elektrycznych.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
-               <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-        }
-        h1, h2 {
-            color: #2a7ae2;
-        }
-        ul {
-            padding-left: 20px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Instalacje Elektryczne</h1>
-    <p>Z pasją i doświadczeniem realizujemy projekty elektryczne dla domów, biur oraz przemysłu, zapewniając bezpieczeństwo, nowoczesność i pełną funkcjonalność.</p>
-    <h2>Dlaczego warto wybrać Instełekt?</h2>
-    <ul>
-        <li>Profesjonalizm i niezawodność.</li>
-        <li>Indywidualne podejście do każdego projektu.</li>
-        <li>Najwyższa jakość usług.</li>
-    </ul>
-    <h2>Nasza oferta obejmuje:</h2>
-    <ul>
-        <li>Projektowanie i montaż instalacji elektrycznych.</li>
-        <li>Modernizację istniejących systemów.</li>
-        <li>Instalacje inteligentnych systemów zarządzania energią.</li>
-    </ul>
-
+              <h1>Instalacje Elektryczne</h1>
+              <p>Z pasją i doświadczeniem realizujemy projekty elektryczne dla domów, biur oraz przemysłu...</p>
+              <h2>Dlaczego warto wybrać Instełekt?</h2>
+              <ul>
+                <li>Profesjonalizm i niezawodność.</li>
+                <li>Indywidualne podejście do każdego projektu.</li>
+                <li>Najwyższa jakość usług.</li>
+              </ul>
+              <h2>Nasza oferta obejmuje:</h2>
+              <ul>
+                <li>Projektowanie i montaż instalacji elektrycznych.</li>
+                <li>Modernizację istniejących systemów.</li>
+                <li>Instalacje inteligentnych systemów zarządzania energią.</li>
+              </ul>
             </p>
           </div>
         </div>
@@ -160,45 +145,28 @@
         <!-- Smart Home -->
         <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
           <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
-            <span><i class="fa-solid fa-house-chimney"></i> Smart Home – Twój Inteligentny Dom
-</span>
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-house-chimney text-2xl transition-transform duration-300 hover:scale-125"></i>
+              Smart Home – Twój Inteligentny Dom
+            </span>
             <i x-show="!open" class="fa-solid fa-chevron-down"></i>
             <i x-show="open" class="fa-solid fa-chevron-up"></i>
           </h3>
-          <p>Z pasją wdrażamy innowacyjne technologie, tworząc domy, które myślą razem z Tobą. </p>
+          <p>Z pasją wdrażamy innowacyjne technologie, tworząc domy, które myślą razem z Tobą.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
-               <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-        }
-        h1, h2 {
-            color: #2a7ae2;
-        }
-        ul {
-            padding-left: 20px;
-        }
-    </style>
-</head>
-<body>
- 
-   <h2>Dlaczego warto wybrać Smart Home od Instełekt?</h2>
-    <ul>
-        <li>Kompleksowe podejście: Zapewniamy pełne wsparcie – od projektu po instalację i konfigurację.</li>
-        <li>Nowoczesność: Korzystamy z najnowszych technologii, które łączą funkcjonalność z estetyką.</li>
-        <li>Wygoda i kontrola: Sterowanie domem jeszcze nigdy nie było tak proste – wszystko w zasięgu jednego kliknięcia.</li>
-    </ul>
-    <h2>Nasza oferta obejmuje:</h2>
-    <ul>
-        <li>Instalację i konfigurację inteligentnych systemów oświetlenia i ogrzewania.</li>
-        <li>Zdalne zarządzanie urządzeniami za pomocą aplikacji mobilnych.</li>
-        <li>Integrację systemów bezpieczeństwa, takich jak monitoring i alarmy.</li>
-    </ul>
-</body>
-
+              <h2>Dlaczego warto wybrać Smart Home od Instełekt?</h2>
+              <ul>
+                <li>Kompleksowe podejście: od projektu po instalację i konfigurację.</li>
+                <li>Nowoczesność: Korzystamy z najnowszych technologii.</li>
+                <li>Wygoda i kontrola: wszystko w zasięgu jednego kliknięcia.</li>
+              </ul>
+              <h2>Nasza oferta obejmuje:</h2>
+              <ul>
+                <li>Instalację i konfigurację inteligentnych systemów oświetlenia i ogrzewania.</li>
+                <li>Zdalne zarządzanie urządzeniami za pomocą aplikacji mobilnych.</li>
+                <li>Integrację systemów bezpieczeństwa, takich jak monitoring i alarmy.</li>
+              </ul>
             </p>
           </div>
         </div>
@@ -206,14 +174,16 @@
         <!-- Monitoring i alarmy -->
         <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
           <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
-            <span><i class="fa-solid fa-camera"></i> Monitoring i alarmy</span>
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-camera text-2xl transition-transform duration-300 hover:scale-125"></i>
+              Monitoring i alarmy
+            </span>
             <i x-show="!open" class="fa-solid fa-chevron-down"></i>
             <i x-show="open" class="fa-solid fa-chevron-up"></i>
           </h3>
           <p>Systemy CCTV, alarmy, czujniki ruchu, powiadomienia.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
               Opis monitoringu i alarmów: [Wstaw pełny opis tutaj].
             </p>
           </div>
@@ -222,14 +192,16 @@
         <!-- Pomiary i serwis -->
         <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
           <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
-            <span><i class="fa-solid fa-wrench"></i> Pomiary i serwis</span>
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-wrench text-2xl transition-transform duration-300 hover:scale-125"></i>
+              Pomiary i serwis
+            </span>
             <i x-show="!open" class="fa-solid fa-chevron-down"></i>
             <i x-show="open" class="fa-solid fa-chevron-up"></i>
           </h3>
           <p>Pomiary elektryczne, przeglądy, konserwacje i naprawy.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
               Opis pomiarów i serwisu: [Wstaw pełny opis tutaj].
             </p>
           </div>
@@ -350,33 +322,10 @@
           <p><strong>Email:</strong> <a href="mailto:kontaktfirma@instelekt.pl" class="text-blue-400">kontaktfirma@instelekt.pl</a></p>
         </div>
         <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
-          <input
-            type="text"
-            name="Imię"
-            placeholder="Twoje imię"
-            required
-            class="w-full p-3 rounded bg-black border border-gray-700"
-          >
-          <input
-            type="email"
-            name="Email"
-            placeholder="Twój email"
-            required
-            class="w-full p-3 rounded bg-black border border-gray-700"
-          >
-          <textarea
-            name="Wiadomość"
-            placeholder="Twoja wiadomość"
-            rows="4"
-            required
-            class="w-full p-3 rounded bg-black border border-gray-700"
-          ></textarea>
-          <button
-            type="submit"
-            class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition"
-          >
-            Wyślij
-          </button>
+          <input type="text" name="Imię" placeholder="Twoje imię" required class="w-full p-3 rounded bg-black border border-gray-700" />
+          <input type="email" name="Email" placeholder="Twój email" required class="w-full p-3 rounded bg-black border border-gray-700" />
+          <textarea name="Wiadomość" placeholder="Twoja wiadomość" rows="4" required class="w-full p-3 rounded bg-black border border-gray-700"></textarea>
+          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition">Wyślij</button>
         </form>
       </div>
     </div>
