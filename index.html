@@ -57,7 +57,7 @@
       </div>
       <div class="space-x-4">
         <a href="#kalkulator" class="text-white hover:text-blue-400">Kalkulator</a>
-        <a href="#kontakt" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition">Umów wycenę</a>
+        <a href="#kontakt" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition">Kontakt</a>
       </div>
     </div>
   </nav>
@@ -115,8 +115,8 @@
           <p>Firma Instełekt to synonim jakości w dziedzinie instalacji elektrycznych.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              <strong>Instalacje Elektryczne</strong><br>
-              Z pasją i doświadczeniem realizujemy projekty elektryczne dla domów, biur oraz przemysłu...<br>
+              <strong>Instalacje Elektryczne</strong>
+			  <br>Z pasją i doświadczeniem realizujemy projekty elektryczne dla domów, biur oraz przemysłu...<br>
               <strong>Dlaczego warto wybrać Instełekt?</strong>
               <ul class="list-disc pl-5">
                 <li>Profesjonalizm i niezawodność.</li>
@@ -177,7 +177,20 @@
           <p>Systemy CCTV, alarmy, czujniki ruchu, powiadomienia.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              Opis monitoringu i alarmów: [Wstaw pełny opis tutaj].
+              <strong>Bezpieczeństwo bez kompromisów</strong>
+			  <br>Projektujemy i wdrażamy inteligentne systemy monitoringu oraz alarmów, które zwiększają poziom ochrony i kontroli.<br>
+              <strong>Dlaczego warto wybrać Instełekt?</strong>
+              <ul class="list-disc pl-5">
+                <li>Profesjonalne doradztwo i kompleksowa realizacja.</li>
+                <li>Najnowocześniejsze technologie zapewniające skuteczność.</li>
+                <li>Pełna integracja z systemami Smart Home.</li>
+              </ul>
+              <strong>Nasza oferta obejmuje:</strong>
+              <ul class="list-disc pl-5">
+                <li>Instalację systemów CCTV i alarmów.</li>
+                <li>Czujniki ruchu i inteligentne powiadomienia.</li>
+                <li>Zdalne zarządzanie i monitoring w czasie rzeczywistym.</li>
+              </ul>
             </p>
           </div>
         </div>
@@ -196,7 +209,20 @@
           <p>Pomiary elektryczne, przeglądy, konserwacje i naprawy.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              Opis pomiarów i serwisu: [Wstaw pełny opis tutaj].
+              <strong>Dbamy o niezawodność systemów</strong>
+			  <br>Zapewniamy kompleksowe usługi, które pozwalają utrzymać instalacje elektryczne w pełni sprawne i bezpieczne.<br>
+              <strong>Dlaczego warto wybrać Instełekt?</strong>
+              <ul class="list-disc pl-5">
+                <li>Profesjonalne podejście i precyzja wykonania.</li>
+                <li>Wykorzystanie nowoczesnych technologii pomiarowych.</li>
+                <li>Regularne przeglądy dla maksymalnej trwałości instalacji.</li>
+              </ul>
+              <strong>Nasza oferta obejmuje:</strong>
+              <ul class="list-disc pl-5">
+                <li>Pomiary elektryczne i diagnostykę systemów.</li>
+                <li>Konserwację i serwis instalacji.</li>
+                <li>Naprawy oraz modernizacje istniejących systemów.</li>
+              </ul>
             </p>
           </div>
         </div>
@@ -205,12 +231,20 @@
     </div>
   </section>
 
-  <!-- Kalkulator -->
-  <section class="py-20 px-4 max-w-5xl mx-auto fade-in" id="kalkulator">
-    <h2 class="text-3xl font-bold mb-10 border-b border-blue-500 inline-block">Kalkulator instalacji</h2>
-    <form id="calcForm" class="space-y-6 text-lg">
+ <!-- Zmieniony kalkulator jako rozwijana sekcja z ikoną, wyśrodkowany i bez podkreślenia -->
+<section class="py-20 px-4 max-w-5xl mx-auto fade-in" id="kalkulator" x-data="{ open: false }">
+  <div class="text-center cursor-pointer mb-10 flex flex-col items-center" @click="open = !open">
+    <div class="flex items-center justify-center gap-2 text-3xl font-bold">
+      <i class="fa-solid fa-calculator text-blue-500"></i>
+      <span>Kalkulator instalacji</span>
+      <i x-show="!open" class="fa-solid fa-chevron-down text-xl"></i>
+      <i x-show="open" class="fa-solid fa-chevron-up text-xl"></i>
+    </div>
+  </div>
+  <div x-show="open" x-transition class="text-center">
+    <form id="calcForm" class="space-y-6 text-lg max-w-xl mx-auto">
       <div>
-        <label class="block mb-2">Rodzaj obiektu:</label>
+        <label class="block mb-2 text-left">Rodzaj obiektu:</label>
         <select class="w-full p-3 rounded bg-black border border-gray-700" id="obiekt">
           <option value="1.0">Mieszkanie</option>
           <option value="1.2">Dom</option>
@@ -218,11 +252,11 @@
         </select>
       </div>
       <div>
-        <label class="block mb-2">Metraż obiektu (m2):</label>
+        <label class="block mb-2 text-left">Metraż obiektu (m2):</label>
         <input type="number" class="w-full p-3 rounded bg-black border border-gray-700" id="metraz" min="20" max="500" value="100">
       </div>
       <div>
-        <label class="block mb-2">Dodatkowe opcje:</label>
+        <label class="block mb-2 text-left">Dodatkowe opcje:</label>
         <label class="inline-flex items-center">
           <input type="checkbox" id="smart" class="form-checkbox text-blue-500 mr-2">
           <span>System Smart Home</span>
@@ -233,18 +267,18 @@
       </button>
       <div id="wynik" class="text-xl font-bold text-green-400"></div>
     </form>
-    <script>
-      function obliczKoszt() {
-        const metraz = parseFloat(document.getElementById('metraz').value);
-        const wspolczynnik = parseFloat(document.getElementById('obiekt').value);
-        const smart = document.getElementById('smart').checked ? 1.25 : 1.0;
-        const bazowaCenaZaM2 = 100; // Mazowieckie, 2025 średnia stawka bazowa
-
-        const koszt = Math.round(metraz * wspolczynnik * smart * bazowaCenaZaM2);
-        document.getElementById('wynik').innerText = `Szacowany koszt: ${koszt.toLocaleString('pl-PL')} zł`;
-      }
-    </script>
-  </section>
+  </div>
+  <script>
+    function obliczKoszt() {
+      const metraz = parseFloat(document.getElementById('metraz').value);
+      const wspolczynnik = parseFloat(document.getElementById('obiekt').value);
+      const smart = document.getElementById('smart').checked ? 1.25 : 1.0;
+      const bazowaCenaZaM2 = 100;
+      const koszt = Math.round(metraz * wspolczynnik * smart * bazowaCenaZaM2);
+      document.getElementById('wynik').innerText = `Szacowany koszt: ${koszt.toLocaleString('pl-PL')} zł`;
+    }
+  </script>
+</section>
 
   <!-- Opinie -->
   <section class="py-20 px-4 max-w-5xl mx-auto" id="opinie">
