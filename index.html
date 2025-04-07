@@ -7,13 +7,12 @@
   <title>InstElekt – Elektryk & Smart Home</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome Icons (jeden raz) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-lQDjLeOR9zsnvmR4+74k+Ax5IipS4RmyozF3L2xRE+P4KJwx0P1r/GX2wl+DWBYI3p3hbYPnTJvRO0RfXz27Bw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="./logo1.png" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js" defer></script>
   <script src="https://unpkg.com/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
   <link href="https://unpkg.com/@splidejs/splide@4.1.3/dist/css/splide.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-lQDjLeOR9zsnvmR4+74k+Ax5IipS4RmyozF3L2xRE+P4KJwx0P1r/GX2wl+DWBYI3p3hbYPnTJvRO0RfXz27Bw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     .parallax { background-attachment: fixed; }
     .fade-in {
@@ -52,294 +51,154 @@
   </nav>
 
   <!-- Hero -->
-<section 
-  class="relative w-full h-screen bg-cover bg-center flex items-center justify-center text-center text-white" 
-  style="background-image: url('./tlo-o-mnie.png');"
->
-  <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-  <div class="relative z-10 max-w-2xl px-4">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">
-      Nowoczesne instalacje elektryczne i inteligentne domy
-    </h1>
-    <p class="text-lg md:text-xl mb-8">
-      Profesjonalne usługi elektryczne oraz rozwiązania smart home dostosowane do Twoich potrzeb.
-    </p>
-    <a 
-      href="#o-mnie" 
-      class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl transition"
-    >
-      Umów wycenę
-    </a>
-  </div>
-</section>
-
-<!-- <div class="pt-24"></div>  <-- Tę linię usuń lub skomentuj, by nie robić sztucznego odstępu. -->
+  <section 
+    class="relative w-full h-screen bg-cover bg-center flex items-center justify-center text-center text-white" 
+    style="background-image: url('./tlo-o-mnie.png');"
+  >
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+    <div class="relative z-10 max-w-2xl px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Nowoczesne instalacje elektryczne i inteligentne domy
+      </h1>
+      <p class="text-lg md:text-xl mb-8">
+        Profesjonalne usługi elektryczne oraz rozwiązania smart home dostosowane do Twoich potrzeb.
+      </p>
+      <!-- Przycisk kierujący do sekcji "O mnie" -->
+      <a 
+        href="#o-mnie" 
+        class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl transition"
+      >
+        Umów wycenę
+      </a>
+    </div>
+  </section>
 
   <!-- O mnie -->
-<section 
-  class="relative py-5 px-4 max-w-5xl mx-auto bg-cover bg-center text-white text-center" 
-  id="o-mnie" 
-  style="background-image: url('./tlo-o-mnie.png');"
->
-  <div class="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
-  <div class="relative z-10">
-    <h2 class="text-3xl font-bold mb-6 border-b border-blue-500 inline-block">
-      INSTELEKT – PROFESJONALNIE, BEZPIECZNIE, NOWOCZEŚNIE
-    </h2>
-    <p class="text-lg leading-relaxed">
-      Witamy w Instelekt – Twoim zaufanym partnerem w dziedzinie usług elektrycznych...
-    </p>
-  </div>
-</section>
+  <section 
+    class="relative py-5 px-4 max-w-5xl mx-auto bg-cover bg-center text-white text-center" 
+    id="o-mnie" 
+    style="background-image: url('./tlo-o-mnie.png');"
+  >
+    <div class="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
+    <div class="relative z-10">
+      <h2 class="text-3xl font-bold mb-6 border-b border-blue-500 inline-block">
+        INSTELEKT – PROFESJONALNIE, BEZPIECZNIE, NOWOCZEŚNIE
+      </h2>
+      <p class="text-lg leading-relaxed">
+        Witamy w Instelekt – Twoim zaufanym partnerem w dziedzinie usług elektrycznych...
+      </p>
+    </div>
+  </section>
 
- <!-- Usługi z rozwijalnymi opisami -->
-<section class="bg-gray-900 py-20 px-4 fade-in" id="uslugi">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-10 border-b border-blue-500 inline-block">Usługi</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg">
-      
-      <!-- Instalacje elektryczne -->
-      <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-        <h3 
-          class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" 
-          @click="open = !open"
-        >
-          <span class="flex items-center gap-2">
-            <!-- Ikona z animacją na hover -->
-            <i class="fa-solid fa-bolt text-2xl transition-transform duration-300 hover:scale-125"></i>
-            Instalacje Elektryczne - Profesjonalizm i Niezawodność
-          </span>
-          <i x-show="!open" class="fa-solid fa-chevron-down"></i>
-          <i x-show="open" class="fa-solid fa-chevron-up"></i>
-        </h3>
-        <p>Firma Instełekt to synonim jakości w dziedzinie instalacji elektrycznych.</p>
-        <div x-show="open" x-transition class="mt-4 text-gray-300">
-          <p>
-            <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
-            <style>
-              body {
-                  font-family: Arial, sans-serif;
-                  margin: 20px;
-                  line-height: 1.6;
-              }
-              h1, h2 {
-                  color: #2a7ae2;
-              }
-              ul {
-                  padding-left: 20px;
-              }
-            </style>
-            <h1>Instalacje Elektryczne</h1>
-            <p>Z pasją i doświadczeniem realizujemy projekty elektryczne dla domów, biur oraz przemysłu...</p>
-            <h2>Dlaczego warto wybrać Instełekt?</h2>
-            <ul>
-              <li>Profesjonalizm i niezawodność.</li>
-              <li>Indywidualne podejście do każdego projektu.</li>
-              <li>Najwyższa jakość usług.</li>
-            </ul>
-            <h2>Nasza oferta obejmuje:</h2>
-            <ul>
-              <li>Projektowanie i montaż instalacji elektrycznych.</li>
-              <li>Modernizację istniejących systemów.</li>
-              <li>Instalacje inteligentnych systemów zarządzania energią.</li>
-            </ul>
-          </p>
+  <!-- Usługi z rozwijalnymi opisami -->
+  <section class="bg-gray-900 py-20 px-4 fade-in" id="uslugi">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10 border-b border-blue-500 inline-block">Usługi</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg">
+        
+        <!-- Instalacje elektryczne -->
+        <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-bolt text-2xl transition-transform duration-300 hover:scale-125"></i>
+              Instalacje Elektryczne - Profesjonalizm i Niezawodność
+            </span>
+            <i x-show="!open" class="fa-solid fa-chevron-down"></i>
+            <i x-show="open" class="fa-solid fa-chevron-up"></i>
+          </h3>
+          <p>Firma Instełekt to synonim jakości w dziedzinie instalacji elektrycznych.</p>
+          <div x-show="open" x-transition class="mt-4 text-gray-300">
+            <p>
+              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
+              <h1>Instalacje Elektryczne</h1>
+              <p>Z pasją i doświadczeniem realizujemy projekty elektryczne dla domów, biur oraz przemysłu...</p>
+              <h2>Dlaczego warto wybrać Instełekt?</h2>
+              <ul>
+                <li>Profesjonalizm i niezawodność.</li>
+                <li>Indywidualne podejście do każdego projektu.</li>
+                <li>Najwyższa jakość usług.</li>
+              </ul>
+              <h2>Nasza oferta obejmuje:</h2>
+              <ul>
+                <li>Projektowanie i montaż instalacji elektrycznych.</li>
+                <li>Modernizację istniejących systemów.</li>
+                <li>Instalacje inteligentnych systemów zarządzania energią.</li>
+              </ul>
+            </p>
+          </div>
         </div>
-      </div>
-      
-      <!-- Smart Home -->
-      <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-        <h3 
-          class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" 
-          @click="open = !open"
-        >
-          <span class="flex items-center gap-2">
-            <!-- Ikona z animacją na hover -->
-            <i class="fa-solid fa-house-chimney text-2xl transition-transform duration-300 hover:scale-125"></i>
-            Smart Home – Twój Inteligentny Dom
-          </span>
-          <i x-show="!open" class="fa-solid fa-chevron-down"></i>
-          <i x-show="open" class="fa-solid fa-chevron-up"></i>
-        </h3>
-        <p>Z pasją wdrażamy innowacyjne technologie, tworząc domy, które myślą razem z Tobą.</p>
-        <div x-show="open" x-transition class="mt-4 text-gray-300">
-          <p>
-            <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
-            <style>
-              body {
-                  font-family: Arial, sans-serif;
-                  margin: 20px;
-                  line-height: 1.6;
-              }
-              h1, h2 {
-                  color: #2a7ae2;
-              }
-              ul {
-                  padding-left: 20px;
-              }
-            </style>
-            <h2>Dlaczego warto wybrać Smart Home od Instełekt?</h2>
-            <ul>
-              <li>Kompleksowe podejście: od projektu po instalację i konfigurację.</li>
-              <li>Nowoczesność: Korzystamy z najnowszych technologii.</li>
-              <li>Wygoda i kontrola: wszystko w zasięgu jednego kliknięcia.</li>
-            </ul>
-            <h2>Nasza oferta obejmuje:</h2>
-            <ul>
-              <li>Instalację i konfigurację inteligentnych systemów oświetlenia i ogrzewania.</li>
-              <li>Zdalne zarządzanie urządzeniami za pomocą aplikacji mobilnych.</li>
-              <li>Integrację systemów bezpieczeństwa, takich jak monitoring i alarmy.</li>
-            </ul>
-          </p>
+        
+        <!-- Smart Home -->
+        <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-house-chimney text-2xl transition-transform duration-300 hover:scale-125"></i>
+              Smart Home – Twój Inteligentny Dom
+            </span>
+            <i x-show="!open" class="fa-solid fa-chevron-down"></i>
+            <i x-show="open" class="fa-solid fa-chevron-up"></i>
+          </h3>
+          <p>Z pasją wdrażamy innowacyjne technologie, tworząc domy, które myślą razem z Tobą.</p>
+          <div x-show="open" x-transition class="mt-4 text-gray-300">
+            <p>
+              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
+              <h2>Dlaczego warto wybrać Smart Home od Instełekt?</h2>
+              <ul>
+                <li>Kompleksowe podejście: od projektu po instalację i konfigurację.</li>
+                <li>Nowoczesność: Korzystamy z najnowszych technologii.</li>
+                <li>Wygoda i kontrola: wszystko w zasięgu jednego kliknięcia.</li>
+              </ul>
+              <h2>Nasza oferta obejmuje:</h2>
+              <ul>
+                <li>Instalację i konfigurację inteligentnych systemów oświetlenia i ogrzewania.</li>
+                <li>Zdalne zarządzanie urządzeniami za pomocą aplikacji mobilnych.</li>
+                <li>Integrację systemów bezpieczeństwa, takich jak monitoring i alarmy.</li>
+              </ul>
+            </p>
+          </div>
         </div>
-      </div>
-      
-      <!-- Monitoring i alarmy -->
-      <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-        <h3 
-          class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" 
-          @click="open = !open"
-        >
-          <span class="flex items-center gap-2">
-            <!-- Ikona z animacją na hover -->
-            <i class="fa-solid fa-camera text-2xl transition-transform duration-300 hover:scale-125"></i>
-            Monitoring i alarmy
-          </span>
-          <i x-show="!open" class="fa-solid fa-chevron-down"></i>
-          <i x-show="open" class="fa-solid fa-chevron-up"></i>
-        </h3>
-        <p>Systemy CCTV, alarmy, czujniki ruchu, powiadomienia.</p>
-        <div x-show="open" x-transition class="mt-4 text-gray-300">
-          <p>
-            <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
-            Opis monitoringu i alarmów: [Wstaw pełny opis tutaj].
-          </p>
+        
+        <!-- Monitoring i alarmy -->
+        <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-camera text-2xl transition-transform duration-300 hover:scale-125"></i>
+              Monitoring i alarmy
+            </span>
+            <i x-show="!open" class="fa-solid fa-chevron-down"></i>
+            <i x-show="open" class="fa-solid fa-chevron-up"></i>
+          </h3>
+          <p>Systemy CCTV, alarmy, czujniki ruchu, powiadomienia.</p>
+          <div x-show="open" x-transition class="mt-4 text-gray-300">
+            <p>
+              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
+              Opis monitoringu i alarmów: [Wstaw pełny opis tutaj].
+            </p>
+          </div>
         </div>
-      </div>
-      
-      <!-- Pomiary i serwis -->
-      <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-        <h3 
-          class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" 
-          @click="open = !open"
-        >
-          <span class="flex items-center gap-2">
-            <!-- Ikona z animacją na hover -->
-            <i class="fa-solid fa-wrench text-2xl transition-transform duration-300 hover:scale-125"></i>
-            Pomiary i serwis
-          </span>
-          <i x-show="!open" class="fa-solid fa-chevron-down"></i>
-          <i x-show="open" class="fa-solid fa-chevron-up"></i>
-        </h3>
-        <p>Pomiary elektryczne, przeglądy, konserwacje i naprawy.</p>
-        <div x-show="open" x-transition class="mt-4 text-gray-300">
-          <p>
-            <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
-            Opis pomiarów i serwisu: [Wstaw pełny opis tutaj].
-          </p>
+        
+        <!-- Pomiary i serwis -->
+        <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+            <span class="flex items-center gap-2">
+              <i class="fa-solid fa-wrench text-2xl transition-transform duration-300 hover:scale-125"></i>
+              Pomiary i serwis
+            </span>
+            <i x-show="!open" class="fa-solid fa-chevron-down"></i>
+            <i x-show="open" class="fa-solid fa-chevron-up"></i>
+          </h3>
+          <p>Pomiary elektryczne, przeglądy, konserwacje i naprawy.</p>
+          <div x-show="open" x-transition class="mt-4 text-gray-300">
+            <p>
+              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
+              Opis pomiarów i serwisu: [Wstaw pełny opis tutaj].
+            </p>
+          </div>
         </div>
+        
       </div>
-      
     </div>
-  </div>
-</section>
-      
-      <!-- Smart Home -->
-      <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-        <h3 
-          class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" 
-          @click="open = !open"
-        >
-          <span class="flex items-center gap-2">
-            <!-- Ikona z animacją na hover -->
-            <i class="fa-solid fa-house-chimney text-2xl transition-transform duration-300 hover:scale-125"></i>
-            Smart Home – Twój Inteligentny Dom
-          </span>
-          <i x-show="!open" class="fa-solid fa-chevron-down"></i>
-          <i x-show="open" class="fa-solid fa-chevron-up"></i>
-        </h3>
-        <p>Z pasją wdrażamy innowacyjne technologie, tworząc domy, które myślą razem z Tobą.</p>
-        <div x-show="open" x-transition class="mt-4 text-gray-300">
-          <p>
-            <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
-            <style>
-              body {
-                  font-family: Arial, sans-serif;
-                  margin: 20px;
-                  line-height: 1.6;
-              }
-              h1, h2 {
-                  color: #2a7ae2;
-              }
-              ul {
-                  padding-left: 20px;
-              }
-            </style>
-            <h2>Dlaczego warto wybrać Smart Home od Instełekt?</h2>
-            <ul>
-              <li>Kompleksowe podejście: od projektu po instalację i konfigurację.</li>
-              <li>Nowoczesność: Korzystamy z najnowszych technologii.</li>
-              <li>Wygoda i kontrola: wszystko w zasięgu jednego kliknięcia.</li>
-            </ul>
-            <h2>Nasza oferta obejmuje:</h2>
-            <ul>
-              <li>Instalację i konfigurację inteligentnych systemów oświetlenia i ogrzewania.</li>
-              <li>Zdalne zarządzanie urządzeniami za pomocą aplikacji mobilnych.</li>
-              <li>Integrację systemów bezpieczeństwa, takich jak monitoring i alarmy.</li>
-            </ul>
-          </p>
-        </div>
-      </div>
-      
-      <!-- Monitoring i alarmy -->
-      <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-        <h3 
-          class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" 
-          @click="open = !open"
-        >
-          <span class="flex items-center gap-2">
-            <!-- Ikona z animacją na hover -->
-            <i class="fa-solid fa-camera text-2xl transition-transform duration-300 hover:scale-125"></i>
-            Monitoring i alarmy
-          </span>
-          <i x-show="!open" class="fa-solid fa-chevron-down"></i>
-          <i x-show="open" class="fa-solid fa-chevron-up"></i>
-        </h3>
-        <p>Systemy CCTV, alarmy, czujniki ruchu, powiadomienia.</p>
-        <div x-show="open" x-transition class="mt-4 text-gray-300">
-          <p>
-            <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
-            Opis monitoringu i alarmów: [Wstaw pełny opis tutaj].
-          </p>
-        </div>
-      </div>
-      
-      <!-- Pomiary i serwis -->
-      <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-        <h3 
-          class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" 
-          @click="open = !open"
-        >
-          <span class="flex items-center gap-2">
-            <!-- Ikona z animacją na hover -->
-            <i class="fa-solid fa-wrench text-2xl transition-transform duration-300 hover:scale-125"></i>
-            Pomiary i serwis
-          </span>
-          <i x-show="!open" class="fa-solid fa-chevron-down"></i>
-          <i x-show="open" class="fa-solid fa-chevron-up"></i>
-        </h3>
-        <p>Pomiary elektryczne, przeglądy, konserwacje i naprawy.</p>
-        <div x-show="open" x-transition class="mt-4 text-gray-300">
-          <p>
-            <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
-            Opis pomiarów i serwisu: [Wstaw pełny opis tutaj].
-          </p>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Kalkulator -->
   <section class="py-20 px-4 max-w-5xl mx-auto fade-in" id="kalkulator">
