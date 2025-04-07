@@ -14,17 +14,21 @@
   <script src="https://unpkg.com/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
   <link href="https://unpkg.com/@splidejs/splide@4.1.3/dist/css/splide.min.css" rel="stylesheet">
   <style>
-    .parallax { background-attachment: fixed; }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  .parallax { background-attachment: fixed; }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* KLUCZOWA linia: upewnia się, że czcionki (ikony) się ładują */
+  @font-face {
+    font-display: block;
+  }
+</style>
 </head>
 <body class="bg-black text-white font-sans" x-data="{ visible: false }" x-init="() => {
   const observer = new IntersectionObserver((entries) => {
