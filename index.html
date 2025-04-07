@@ -5,42 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="InstElekt – Nowoczesne instalacje elektryczne i systemy Smart Home w Legionowie i okolicach." />
   <title>InstElekt – Elektryk & Smart Home</title>
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome Icons (jeden raz) -->
+
+  <!-- Font Awesome z oficjalnego CDN -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" integrity="sha384-oS8C38HgvFYlSRnLTXaLb1dWWKrQdfuwFGqzYMLcSpEOK9ZmD2UDez0YFi+27U8N" crossorigin="anonymous">
+
+  <!-- Ikona strony -->
   <link rel="icon" href="./logo1.png" />
+
+  <!-- Alpine.js do rozwijanych opisów -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js" defer></script>
+
+  <!-- Splide.js do slidera (opinie) -->
   <script src="https://unpkg.com/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
   <link href="https://unpkg.com/@splidejs/splide@4.1.3/dist/css/splide.min.css" rel="stylesheet">
-  <i class="fa-solid fa-bolt text-white text-3xl"></i>
+
   <style>
-  .parallax { background-attachment: fixed; }
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease-out;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  /* KLUCZOWA linia: upewnia się, że czcionki (ikony) się ładują */
-  @font-face {
-    font-display: block;
-  }
-</style>
+    .parallax {
+      background-attachment: fixed;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-<body class="bg-black text-white font-sans" x-data="{ visible: false }" x-init="() => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-}">
+<body class="bg-black text-white font-sans"
+  x-data="{ visible: false }"
+  x-init="() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  }"
+>
   <!-- Navbar -->
   <nav class="w-full fixed top-0 left-0 z-50 bg-black bg-opacity-80 backdrop-blur border-b border-gray-700">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -56,8 +65,8 @@
   </nav>
 
   <!-- Hero -->
-  <section 
-    class="relative w-full h-screen bg-cover bg-center flex items-center justify-center text-center text-white" 
+  <section
+    class="relative w-full h-screen bg-cover bg-center flex items-center justify-center text-center text-white"
     style="background-image: url('./tlo-o-mnie.png');"
   >
     <div class="absolute inset-0 bg-black bg-opacity-70"></div>
@@ -68,9 +77,8 @@
       <p class="text-lg md:text-xl mb-8">
         Profesjonalne usługi elektryczne oraz rozwiązania smart home dostosowane do Twoich potrzeb.
       </p>
-      <!-- Przycisk kierujący do sekcji "O mnie" -->
-      <a 
-        href="#o-mnie" 
+      <a
+        href="#o-mnie"
         class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl transition"
       >
         Umów wycenę
@@ -79,9 +87,9 @@
   </section>
 
   <!-- O mnie -->
-  <section 
-    class="relative py-5 px-4 max-w-5xl mx-auto bg-cover bg-center text-white text-center" 
-    id="o-mnie" 
+  <section
+    id="o-mnie"
+    class="relative py-5 px-4 max-w-5xl mx-auto bg-cover bg-center text-white text-center"
     style="background-image: url('./tlo-o-mnie.png');"
   >
     <div class="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
@@ -90,7 +98,9 @@
         INSTELEKT – PROFESJONALNIE, BEZPIECZNIE, NOWOCZEŚNIE
       </h2>
       <p class="text-lg leading-relaxed">
-       <strong> Witamy w Instelekt – Twoim zaufanym partnerem w dziedzinie usług elektrycznych oraz nowoczesnych rozwiązań technologicznych dla domu i biznesu. Nasza misja to zapewnienie klientom najwyższego poziomu bezpieczeństwa, komfortu oraz efektywności dzięki kompleksowym usługom elektrycznym oraz inteligentnym systemom automatyki domowej i monitoringu CCTV. Jeśli szukasz sprawdzonych specjalistów, dla których jakość, terminowość i profesjonalizm to priorytety – jesteś we właściwym miejscu. Dołącz do grona naszych zadowolonych klientów z Legionowa, Warszawy i całego województwa mazowieckiego. Z nami masz pewność, że Twój dom i firma są w najlepszych rękach.</strong>
+        <strong>
+          Witamy w Instelekt – Twoim zaufanym partnerem w dziedzinie usług elektrycznych oraz nowoczesnych rozwiązań technologicznych dla domu i biznesu. Nasza misja to zapewnienie klientom najwyższego poziomu bezpieczeństwa, komfortu oraz efektywności dzięki kompleksowym usługom elektrycznym oraz inteligentnym systemom automatyki domowej i monitoringu CCTV. Jeśli szukasz sprawdzonych specjalistów, dla których jakość, terminowość i profesjonalizm to priorytety – jesteś we właściwym miejscu. Dołącz do grona naszych zadowolonych klientów z Legionowa, Warszawy i całego województwa mazowieckiego. Z nami masz pewność, że Twój dom i firma są w najlepszych rękach.
+        </strong>
       </p>
     </div>
   </section>
@@ -100,21 +110,25 @@
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold mb-10 border-b border-blue-500 inline-block">Usługi</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg">
-        
+
         <!-- Instalacje elektryczne -->
         <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+          <h3
+            class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between"
+            @click="open = !open"
+          >
             <span class="flex items-center gap-2">
               <i class="fa-solid fa-bolt text-2xl transition-transform duration-300 hover:scale-125"></i>
               Instalacje Elektryczne - Profesjonalizm i Niezawodność
             </span>
+            <!-- Strzałka w dół, gdy zamknięte -->
             <i x-show="!open" class="fa-solid fa-chevron-down"></i>
+            <!-- Strzałka w górę, gdy otwarte -->
             <i x-show="open" class="fa-solid fa-chevron-up"></i>
           </h3>
           <p>Firma Instełekt to synonim jakości w dziedzinie instalacji elektrycznych.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
               <h1>Instalacje Elektryczne</h1>
               <p>Z pasją i doświadczeniem realizujemy projekty elektryczne dla domów, biur oraz przemysłu...</p>
               <h2>Dlaczego warto wybrać Instełekt?</h2>
@@ -132,10 +146,13 @@
             </p>
           </div>
         </div>
-        
+
         <!-- Smart Home -->
         <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+          <h3
+            class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between"
+            @click="open = !open"
+          >
             <span class="flex items-center gap-2">
               <i class="fa-solid fa-house-chimney text-2xl transition-transform duration-300 hover:scale-125"></i>
               Smart Home – Twój Inteligentny Dom
@@ -146,7 +163,6 @@
           <p>Z pasją wdrażamy innowacyjne technologie, tworząc domy, które myślą razem z Tobą.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
               <h2>Dlaczego warto wybrać Smart Home od Instełekt?</h2>
               <ul>
                 <li>Kompleksowe podejście: od projektu po instalację i konfigurację.</li>
@@ -162,10 +178,13 @@
             </p>
           </div>
         </div>
-        
+
         <!-- Monitoring i alarmy -->
         <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+          <h3
+            class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between"
+            @click="open = !open"
+          >
             <span class="flex items-center gap-2">
               <i class="fa-solid fa-camera text-2xl transition-transform duration-300 hover:scale-125"></i>
               Monitoring i alarmy
@@ -176,15 +195,17 @@
           <p>Systemy CCTV, alarmy, czujniki ruchu, powiadomienia.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
               Opis monitoringu i alarmów: [Wstaw pełny opis tutaj].
             </p>
           </div>
         </div>
-        
+
         <!-- Pomiary i serwis -->
         <div x-data="{ open: false }" class="bg-gray-800 rounded-xl p-6 shadow-md">
-          <h3 class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between" @click="open = !open">
+          <h3
+            class="text-xl font-semibold text-blue-400 mb-2 cursor-pointer flex items-center justify-between"
+            @click="open = !open"
+          >
             <span class="flex items-center gap-2">
               <i class="fa-solid fa-wrench text-2xl transition-transform duration-300 hover:scale-125"></i>
               Pomiary i serwis
@@ -195,12 +216,11 @@
           <p>Pomiary elektryczne, przeglądy, konserwacje i naprawy.</p>
           <div x-show="open" x-transition class="mt-4 text-gray-300">
             <p>
-              <!-- ROZWINIĘTY OPIS: wstaw tutaj pełny tekst -->
               Opis pomiarów i serwisu: [Wstaw pełny opis tutaj].
             </p>
           </div>
         </div>
-        
+
       </div>
     </div>
   </section>
@@ -219,7 +239,14 @@
       </div>
       <div>
         <label class="block mb-2">Metraż obiektu (m2):</label>
-        <input type="number" class="w-full p-3 rounded bg-black border border-gray-700" id="metraz" min="20" max="500" value="100">
+        <input
+          type="number"
+          class="w-full p-3 rounded bg-black border border-gray-700"
+          id="metraz"
+          min="20"
+          max="500"
+          value="100"
+        >
       </div>
       <div>
         <label class="block mb-2">Dodatkowe opcje:</label>
@@ -228,7 +255,13 @@
           <span>System Smart Home</span>
         </label>
       </div>
-      <button type="button" onclick="obliczKoszt()" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition">Oblicz koszt</button>
+      <button
+        type="button"
+        onclick="obliczKoszt()"
+        class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition"
+      >
+        Oblicz koszt
+      </button>
       <div id="wynik" class="text-xl font-bold text-green-400"></div>
     </form>
     <script>
@@ -250,11 +283,31 @@
     <div id="opinieSlider" class="splide" aria-label="Opinie klientów">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"Profesjonalnie, szybko i zgodnie z ustaleniami. Polecam każdemu!" – Anna K.</blockquote></li>
-          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"System Smart Home działa bez zarzutu – dom sterowany z telefonu to świetna sprawa." – Marcin D.</blockquote></li>
-          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"Pełen profesjonalizm i doradztwo na najwyższym poziomie. Zdecydowanie polecam!" – Ewa Z.</blockquote></li>
-          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"Zamontowane instalacje działają bezbłędnie – świetna robota!" – Tomasz M.</blockquote></li>
-          <li class="splide__slide"><blockquote class="border-l-4 border-blue-500 pl-4 italic">"Bardzo szybki czas realizacji i konkurencyjna cena. Będę wracać." – Katarzyna L.</blockquote></li>
+          <li class="splide__slide">
+            <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+              "Profesjonalnie, szybko i zgodnie z ustaleniami. Polecam każdemu!" – Anna K.
+            </blockquote>
+          </li>
+          <li class="splide__slide">
+            <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+              "System Smart Home działa bez zarzutu – dom sterowany z telefonu to świetna sprawa." – Marcin D.
+            </blockquote>
+          </li>
+          <li class="splide__slide">
+            <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+              "Pełen profesjonalizm i doradztwo na najwyższym poziomie. Zdecydowanie polecam!" – Ewa Z.
+            </blockquote>
+          </li>
+          <li class="splide__slide">
+            <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+              "Zamontowane instalacje działają bezbłędnie – świetna robota!" – Tomasz M.
+            </blockquote>
+          </li>
+          <li class="splide__slide">
+            <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+              "Bardzo szybki czas realizacji i konkurencyjna cena. Będę wracać." – Katarzyna L.
+            </blockquote>
+          </li>
         </ul>
       </div>
     </div>
@@ -283,10 +336,33 @@
           <p><strong>Email:</strong> <a href="mailto:kontaktfirma@instelekt.pl" class="text-blue-400">kontaktfirma@instelekt.pl</a></p>
         </div>
         <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
-          <input type="text" name="Imię" placeholder="Twoje imię" required class="w-full p-3 rounded bg-black border border-gray-700" />
-          <input type="email" name="Email" placeholder="Twój email" required class="w-full p-3 rounded bg-black border border-gray-700" />
-          <textarea name="Wiadomość" placeholder="Twoja wiadomość" rows="4" required class="w-full p-3 rounded bg-black border border-gray-700"></textarea>
-          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition">Wyślij</button>
+          <input
+            type="text"
+            name="Imię"
+            placeholder="Twoje imię"
+            required
+            class="w-full p-3 rounded bg-black border border-gray-700"
+          >
+          <input
+            type="email"
+            name="Email"
+            placeholder="Twój email"
+            required
+            class="w-full p-3 rounded bg-black border border-gray-700"
+          >
+          <textarea
+            name="Wiadomość"
+            placeholder="Twoja wiadomość"
+            rows="4"
+            required
+            class="w-full p-3 rounded bg-black border border-gray-700"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl transition"
+          >
+            Wyślij
+          </button>
         </form>
       </div>
     </div>
